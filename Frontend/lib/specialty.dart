@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'model/specialty.dart';
 import 'model/department.dart';
 import 'services/apiService.dart';
+import 'package:intl/intl.dart';
 
 final ApiService apiService = ApiService();
 

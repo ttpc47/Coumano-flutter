@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'model/department.dart';
 import 'services/apiService.dart';
+import 'package:intl/intl.dart';
 
 final ApiService apiService = ApiService();
 
@@ -175,9 +176,6 @@ class _DepartmentListPageState extends State<DepartmentListPage> {
   }
 }
 
-class DateFormat {
-  static yMMMd() {}
-}
 
 class DepartmentFormPage extends StatefulWidget {
   final Department? department;

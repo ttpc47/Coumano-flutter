@@ -1,9 +1,9 @@
 // lib/model/student.dart
-// import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 // import './specialty.dart'; // Import Speciality if needed for full object
 
 class Student {
-  final String uuid;
+  final String id;
   final String speciality; // UUID of the speciality
   final String firstName;
   final String lastName;
@@ -15,7 +15,7 @@ class Student {
   final String? departmentName; // For display purposes
 
   Student({
-    required this.uuid,
+    required this.id,
     required this.speciality,
     required this.firstName,
     required this.lastName,
@@ -29,7 +29,7 @@ class Student {
 
   factory Student.fromJson(Map<String, dynamic> json) {
     return Student(
-      uuid: json['uuid'] as String,
+      uuid: json['id'] as String,
       speciality: json['speciality'] as String,
       firstName: json['first_name'] as String,
       lastName: json['last_name'] as String,
@@ -48,7 +48,7 @@ class Student {
 
   Map<String, dynamic> toJson() {
     return {
-      'uuid': uuid,
+      'uuid': id,
       'speciality': speciality,
       'first_name': firstName,
       'last_name': lastName,
