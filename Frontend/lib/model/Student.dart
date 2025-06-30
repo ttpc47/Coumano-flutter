@@ -1,5 +1,5 @@
 // lib/model/student.dart
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 // import './specialty.dart'; // Import Speciality if needed for full object
 
 class Student {
@@ -29,7 +29,7 @@ class Student {
 
   factory Student.fromJson(Map<String, dynamic> json) {
     return Student(
-      uuid: json['id'] as String,
+      id: json['id'] as String,
       speciality: json['speciality'] as String,
       firstName: json['first_name'] as String,
       lastName: json['last_name'] as String,

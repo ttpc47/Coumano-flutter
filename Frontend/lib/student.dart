@@ -29,7 +29,7 @@ class _StudentListPageState extends State<StudentListPage> {
     });
   }
 
-  void _showDeleteConfirmation(String uuid, String name) {
+  void _showDeleteConfirmation(String id, String name) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -48,7 +48,7 @@ class _StudentListPageState extends State<StudentListPage> {
               onPressed: () async {
                 Navigator.of(context).pop();
                 try {
-                  await apiService.deleteStudent(uuid);
+                  await apiService.deleteStudent(id);
                   _refreshStudents();
                   _showSnackBar('Student deleted successfully!', Colors.green);
                 } catch (e) {
@@ -148,7 +148,7 @@ class _StudentListPageState extends State<StudentListPage> {
                           icon: const Icon(Icons.delete, color: Colors.red),
                           onPressed: () {
                             _showDeleteConfirmation(
-                              student.uuid,
+                              student.id,
                               '${student.firstName} ${student.lastName}',
                             );
                           },
@@ -274,7 +274,7 @@ class _StudentFormPageState extends State<StudentFormPage> {
 
       try {
         final newStudent = Student(
-          uuid: widget.student?.uuid ?? '',
+          id: widget.student?.id ?? '',
           speciality: _selectedSpecialty!.uuid,
           firstName: _firstNameController.text,
           lastName: _lastNameController.text,

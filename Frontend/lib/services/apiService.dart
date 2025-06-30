@@ -134,7 +134,7 @@ class ApiService {
 
   Future<Student> updateStudent(Student student) async {
     final response = await http.put(
-      Uri.parse('$_baseUrl/students/${student.uuid}/'),
+      Uri.parse('$_baseUrl/students/${student.id}/'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode(student.toJson()),
     );
@@ -146,8 +146,8 @@ class ApiService {
     }
   }
 
-  Future<void> deleteStudent(String uuid) async {
-    final response = await http.delete(Uri.parse('$_baseUrl/students/$uuid/'));
+  Future<void> deleteStudent(String id) async {
+    final response = await http.delete(Uri.parse('$_baseUrl/students/$id/'));
     if (response.statusCode != 204) {
       throw Exception(
           'Failed to delete student: ${response.statusCode} - ${response.body}');

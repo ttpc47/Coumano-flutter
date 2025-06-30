@@ -47,6 +47,12 @@ class Student(models.Model):
     )
     first_name = models.CharField(max_length=100, )
     last_name = models.CharField(max_length=100, )
+    student_id = models.CharField(
+        max_length=20,
+        unique=True,
+        default="stud",
+        help_text="Unique identifier for the student, e.g., student ID"
+    )
     email = models.EmailField(unique=True)
     date_of_birth = models.DateField(blank=True, null=True,)
     enrollment_date = models.DateField(auto_now_add=True,)
